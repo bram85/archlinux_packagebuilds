@@ -1,0 +1,22 @@
+# Contributor:  Emanuele Rossi <newdna1510@yahoo.it>
+# Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
+arch=(i686 x86_64)
+pkgname=choqok
+pkgver=0.4
+pkgrel=1
+pkgdesc="A KDE 4 Twitter client."
+url="http://choqok.ospdev.net/"
+license="GPL"
+depends=('kdelibs')
+makedepends=('cmake' 'automoc4')
+source=("http://mirror.umoss.org/download.ospdev.net/choqok/choqok/0.4/$pkgname-$pkgver.tar.bz2")
+md5sums=('d460f54b7bbaa47e3a669b72e1a2a760')
+
+build() {
+  cd $srcdir/$pkgname-$pkgver
+  cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr .
+  make || return 1
+  make DESTDIR="$pkgdir/" install
+}
+# vim:syntax=sh
+ 
