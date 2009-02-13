@@ -1,11 +1,11 @@
 # Contributor:  Emanuele Rossi <newdna1510@yahoo.it>
 # Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
 arch=(i686 x86_64)
-pkgname=choqok
+pkgname=choqok-svn
 pkgver=925012
 pkgrel=1
 pkgdesc="A KDE 4 Twitter client."
-url="http://www.kde.org/"
+url="http://choqok.ospdev.net/"
 license="GPL"
 depends=('kdelibs')
 makedepends=('subversion' 'cmake' 'automoc4')
