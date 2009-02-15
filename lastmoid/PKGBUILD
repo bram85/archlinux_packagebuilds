@@ -1,0 +1,21 @@
+# Contributor: Bram Schoenmakers <me@bramschoenmakers.nl>
+
+pkgname=plasma-lastmoid
+pkgver=0.4
+pkgrel=1
+pkgdesc="Shows your Last.fm charts on your desktop."
+arch=('i686' 'x86_64')
+url="http://www.kde-look.org/content/show.php?content=98117"
+license=('GPL')
+depends=('kdebase-workspace')
+makedepends=('gcc' 'cmake' 'automoc4')
+source=("http://www.kde-look.org/CONTENT/content-files/98117-Lastmoid0401.tar.gz")
+md5sums=('0aca729cee5de5e77b0970cef00b8079')
+
+build() {
+  cd "$srcdir/Lastmoid"
+  mkdir build && cd build
+  cmake -DCMAKE_INSTALL_PREFIX=/usr .. || return 1
+  make || return 1
+  make DESTDIR="$pkgdir/" install || return 1
+}
