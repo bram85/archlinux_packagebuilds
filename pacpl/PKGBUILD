@@ -1,0 +1,23 @@
+# Contributor: Max Nemeth <max.nemeth@gmail.com>
+# Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
+pkgname=pacpl
+pkgver=4.0.4
+pkgrel=1
+pkgdesc="Convert multiple audio types from one format to another. Konqueror Integration."
+arch=('i686')
+url="http://viiron.googlepages.com/"
+license=('GPL')
+depends=('kdebase' 'perl' 'perl-parse-recdescent' 'perl-inline' 'libogg' 'libvorbis' 'flac' 'perl-ogg-vorbis-header' 'perl-mp3-info' 'perl-mp4-info' 'perl-mp3-tag' 'perl-audio-wma' 'perl-audio-flac-header' 'perl-audio-musepack' 'cddb_get')
+install=$pkgname.install
+source=(http://downloads.sourceforge.net/pacpl/$pkgname-$pkgver.tar.gz
+        Makefile.in.patch)
+md5sums=('743d2b5b71919c87d0ef23d79a5576ce'
+         '07d26a2d39c0d886ea0a45243b7c2237')
+
+build() {
+	cd $startdir/src/$pkgname-$pkgver
+	patch < $startdir/Makefile.in.patch
+	./configure --without-amarok --without-dolphin
+	make || return 1
+	make KDEDIR=/opt/kde DESTDIR=$startdir/pkg install || return 1
+} 

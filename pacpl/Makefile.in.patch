@@ -1,0 +1,14 @@
+--- src/pacpl-4.0.4/Makefile.in	2009-01-04 14:44:29.000000000 +0100
++++ Makefile.in	2009-02-15 01:56:13.000000000 +0100
+@@ -35,8 +35,11 @@
+ 	    po/es.po \
+ 	    po/et.po \
+ 	    po/fr_FR.po \
++	    po/it_IT.po \
++	    po/nl_NL.po \
+ 	    po/pl.po \
+ 	    po/pt.po \
++	    po/ro.po \
+ 	    po/ru_RU.po \
+ 	    po/tr.po \
+ 	    po/zh_CN.po
