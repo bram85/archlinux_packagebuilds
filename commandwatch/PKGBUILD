@@ -7,17 +7,9 @@ pkgdesc="Plasmoid which periodically runs a system command and displays its outp
 arch=('i686' 'x86_64')
 url="http://www.kde-look.org/content/show.php?content=84523"
 license=('GPL2')
-groups=()
 depends=('kdebase-workspace>=4.1.0')
 makedepends=('gcc' 'cmake' 'automoc4')
-provides=()
-conflicts=()
-replaces=()
-backup=()
-options=()
-install=
 source=("http://www.kde-look.org/CONTENT/content-files/84523-commandwatch-0.1.1.tar.bz2")
-noextract=()
 md5sums=('e9278c96870203b5fcf17a7660bb74da')
 build() {
   cd "$srcdir/commandwatch-$pkgver"
