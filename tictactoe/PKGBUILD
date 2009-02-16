@@ -1,7 +1,7 @@
 # Contributor: Bram Schoenmakers <me@bramschoenmakers.nl>
 
 pkgname=plasma-tictactoe-plasmoid
-pkgver=1.0
+pkgver=0.1
 pkgrel=1
 pkgdesc="A Tic Tac Toe game for your plasma desktop."
 arch=('i686' 'x86_64')
@@ -9,11 +9,11 @@ url="http://sourceforge.net/projects/tatetiplasmoid/"
 license=('GPL')
 depends=('kdebase-workspace')
 makedepends=('gcc' 'cmake' 'automoc4')
-source=("http://www.kde-look.org/CONTENT/content-files/99329-tictactoe-$pkgver.tar.bz2")
+source=("http://www.kde-look.org/CONTENT/content-files/99329-tictactoe-1.0.tar.bz2")
 md5sums=('bf571c72ecc85983bbd5642009568c9b')
 
 build() {
-  cd $srcdir/tictactoe-$pkgver
+  cd $srcdir/tictactoe-1.0
   mkdir build && cd build
   cmake -DCMAKE_INSTALL_PREFIX=/usr .. || return 1
   make || return 1
