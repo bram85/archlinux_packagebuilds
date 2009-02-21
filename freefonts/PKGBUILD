@@ -20,3 +20,4 @@ build() {
   install -m644 *.pfb ${startdir}/pkg/usr/share/fonts/freefonts/
   install -m644 *.license ${startdir}/pkg/usr/share/licenses/freefonts
 }
+# vim:syntax=sh

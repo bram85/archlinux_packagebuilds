@@ -33,3 +33,4 @@ build() {
   done
   install -D -m 644 evolvotron.html $pkgdir/usr/share/doc/$pkgname/manual.html
 }
+# vim:syntax=sh

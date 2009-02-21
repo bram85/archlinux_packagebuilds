@@ -38,3 +38,4 @@ build() {
   rm -rf $startdir/src/$_svnmod-build
 }
 # vim:syntax=sh
+# vim:syntax=sh
