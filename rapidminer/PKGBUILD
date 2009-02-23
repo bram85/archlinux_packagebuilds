@@ -1,0 +1,45 @@
+# Contributor: Bram Schoenmakers <me@bramschoenmakers.nl>
+
+pkgname=rapidminer
+pkgver=4.3
+pkgrel=1
+pkgdesc="An open-source data mining solution."
+arch=('i686')
+url="http://rapid-i.com/"
+license=('custom')
+depends=(java-runtime)
+install=
+source=(http://downloads.sourceforge.net/yale/$pkgname-$pkgver-community.zip
+        rapidminer.desktop)
+noextract=()
+md5sums=('ca9b2bc5b58571741a449dae549fb478'
+         'd0dbcb8ad72c285efec9740c1cda65e0')
+
+build() {
+  cd $srcdir/$pkgname-$pkgver
+
+  # Determine JAVA_HOME
+  [ -f /etc/profile.d/openjdk6.sh ] && source /etc/profile.d/openjdk6.sh
+  [ -z "$JAVA_HOME" ] && [ -f "/etc/profile.d/openjdk6.sh" ] && source /etc/profile.d/openjdk6.sh
+  [ -z "$JAVA_HOME" ] && [ -f "/etc/profile.d/openjdk6.sh" ] && source /etc/profile.d/openjdk6.sh
+  [ -z "$JAVA_HOME" ] && ( echo "Could not determine JAVA_HOME."; return 1 )
+
+  # Modify scripts such that the /opt/rapidminer prefix is recognized.
+  # Also set the JAVA_HOME
+  sed -i'' -e "s|^#RAPIDMINER_HOME=\\\${HOME}\$|RAPIDMINER_HOME=/opt/rapidminer\nJAVA_HOME=${JAVA_HOME}|" scripts/rapidminer
+  sed -i'' -e "s|^#RAPIDMINER_HOME=\\\${HOME}\$|RAPIDMINER_HOME=/opt/rapidminer\nJAVA_HOME=${JAVA_HOME}|" scripts/RapidMinerGUI
+ 
+  # Install files into prefix
+  find {lib,etc,resources} -type f -exec install -m 644 -D {} ${pkgdir}/opt/rapidminer/{} \;
+  install -m 755 -D scripts/rapidminer ${pkgdir}/opt/rapidminer/bin/rapidminer
+  install -m 755 -D scripts/RapidMinerGUI ${pkgdir}/opt/rapidminer/bin/RapidMinerGUI
+
+  # custom licenses
+  pushd licenses > /dev/null
+  find . -type f -exec install -m 644 -D {} ${pkgdir}/usr/share/licenses/${pkgname}/{} \;
+  popd > /dev/null
+
+  # desktop file
+  install -m 644 -D "${startdir}/rapidminer.desktop" "${pkgdir}/usr/share/applications/rapidminer.desktop" || return 1
+}
+# vim:syntax=sh
