@@ -1,0 +1,29 @@
+# Contributor: Bram Schoenmakers <me@bramschoenmakers.nl>
+
+pkgname=cdb
+pkgver=0.75
+pkgrel=1
+pkgdesc="A fast, reliable, simple package for creating and reading constant databases"
+arch=('i686')
+url="http://cr.yp.to/cdb.html"
+license=(public-domain)
+conflicts=(tinycdb)
+source=(http://cr.yp.to/cdb/$pkgname-$pkgver.tar.gz)
+md5sums=('81fed54d0bde51b147dd6c20cdb92d51')
+
+build() {
+  cd $srcdir/$pkgname-$pkgver
+
+  # Set install prefix
+  echo /usr > conf-home
+
+  # A little patch, borrowed from Gentoo Portage
+  sed -i '' -e 's/^extern int errno;$/#include <errno.h>/' error.h
+
+  make || return 1
+  
+  # don't use make setup, but move the binaries ourselves
+  mkdir -p ${pkgdir}/bin/
+  install -m 755 -t ${pkgdir}/bin/ cdbdump cdbget cdbmake cdbmake-12 cdbmake-sv cdbstats cdbtest || return 1
+}
+# vim:syntax=sh
