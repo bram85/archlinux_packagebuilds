@@ -1,0 +1,22 @@
+# Contributor: Bram Schoenmakers <me@bramschoenmakers.nl>
+
+pkgname=plasma-luna2-plasmoid
+pkgver=1.0
+pkgrel=1
+pkgdesc="A plasma applet that displays the moon phases."
+arch=('i686' 'x86_64')
+url="http://www.kde-look.org/content/show.php?content=100337"
+license=('GPL')
+depends=('kdebase-workspace')
+makedepends=('gcc' 'cmake' 'automoc4')
+source=("http://www.kde-look.org/CONTENT/content-files/100337-plasma-applet-luna2-$pkgver.tar.bz2")
+md5sums=('41fc7d45a7dda4cc0dde36ceb23f8701')
+
+build() {
+  cd "$srcdir/plasma-applet-luna2"
+  mkdir build && cd build
+  cmake -DCMAKE_INSTALL_PREFIX=/usr .. || return 1
+  make || return 1
+  make DESTDIR="$pkgdir/" install || return 1
+}
+# vim:syntax=sh
