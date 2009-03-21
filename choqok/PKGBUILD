@@ -2,15 +2,15 @@
 # Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
 arch=(i686 x86_64)
 pkgname=choqok
-pkgver=0.4
+pkgver=0.5
 pkgrel=1
 pkgdesc="A KDE 4 Twitter client."
 url="http://choqok.ospdev.net/"
 license="GPL"
 depends=('kdelibs')
 makedepends=('cmake' 'automoc4')
-source=("http://mirror.umoss.org/download.ospdev.net/choqok/choqok/0.4/$pkgname-$pkgver.tar.bz2")
-md5sums=('d460f54b7bbaa47e3a669b72e1a2a760')
+source=("ftp://download.ospdev.net/choqok/choqok/0.5Norooz/choqok-0.5.tar.bz2")
+md5sums=('b24b0f163e3b1e6ff725a285fd08b114')
 
 build() {
   cd $srcdir/$pkgname-$pkgver
