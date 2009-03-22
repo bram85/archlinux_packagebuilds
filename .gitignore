@@ -1,4 +1,6 @@
 *.tar*
 *.zip
-_notmine
-_abs
+/_notmine
+/_abs
+src
+pkg
