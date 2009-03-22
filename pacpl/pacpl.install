@@ -1,11 +1,8 @@
 post_install() {
-  echo "Install pacpl-d3lphin for d3lphin support."
-  echo "Install pacpl-amarok for amarok support."
+  echo "You must have the appropriate codecs installed to convert."
   echo ""
-  echo "YOU MUST HAVE THE APPROPRIATE CODECS INSTALLED TO CONVERT."
-  echo ""
-  echo "THE FOLLOWING PROGRAMS ARE REQUIRED FOR FULL FUNCTIONALITY."
-  echo "NOTE THAT SOME ARE IN AUR, AND SOME DON'T HAVE PACKAGES (YET)."
+  echo "The following programs are required for full functionality."
+  echo "Note that some are in AUR, and some don't have packages (yet)."
   echo "==> lame"
   echo "==> flac"
   echo "==> shorten"
@@ -25,19 +22,16 @@ post_install() {
   echo "==> bonk"
   echo "==> sox"
   echo ""
-  echo "PREFERENCES ARE LOCATED IN /etc/pacpl/pacpl.conf"
+  echo "Preferences are located in /etc/pacpl/pacpl.conf"
 }
 
 # arg 1:  the new package version
 # arg 2:  the old package version
 post_upgrade() {
-  echo "Install pacpl-d3lphin for d3lphin support."
-  echo "Install pacpl-amarok for amarok support."
+  echo "You must have the appropriate codecs installed to convert."
   echo ""
-  echo "YOU MUST HAVE THE APPROPRIATE CODECS INSTALLED TO CONVERT."
-  echo ""
-  echo "THE FOLLOWING PROGRAMS ARE REQUIRED FOR FULL FUNCTIONALITY."
-  echo "NOTE THAT SOME ARE IN AUR, AND SOME DON'T HAVE PACKAGES (YET)."
+  echo "The following programs are required for full functionality."
+  echo "Note that some are in AUR, and some don't have packages (yet)."
   echo "==> lame"
   echo "==> flac"
   echo "==> shorten"
@@ -57,7 +51,7 @@ post_upgrade() {
   echo "==> bonk"
   echo "==> sox"
   echo ""
-  echo "PREFERENCES ARE LOCATED IN /etc/pacpl/pacpl.conf"
+  echo "Preferences are located in /etc/pacpl/pacpl.conf"
 }
 
 op=$1
