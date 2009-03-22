@@ -2,7 +2,7 @@
 # Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
 arch=(i686 x86_64)
 pkgname=choqok-svn
-pkgver=925012
+pkgver=942426
 pkgrel=1
 pkgdesc="A KDE 4 Twitter client."
 url="http://choqok.ospdev.net/"
@@ -13,7 +13,7 @@ makedepends=('subversion' 'cmake' 'automoc4')
 source=()
 md5sums=()
 
-_svntrunk=svn://anonsvn.kde.org/home/kde/trunk/playground/network/choqok/
+_svntrunk=svn://anonsvn.kde.org/home/kde/trunk/kdereview/choqok/
 _svnmod=choqok
 
 build() {
@@ -37,5 +37,4 @@ build() {
 
   rm -rf $startdir/src/$_svnmod-build
 }
-# vim:syntax=sh
 # vim:syntax=sh
