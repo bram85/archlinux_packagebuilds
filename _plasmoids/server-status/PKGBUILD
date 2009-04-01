@@ -1,7 +1,7 @@
 # Contributor: Bram Schoenmakers <me@bramschoenmakers.nl>
 
 pkgname=plasma-server-status-plasmoid
-pkgver=0.2
+pkgver=0.3
 pkgrel=1
 pkgdesc="Lets you monitor one or more servers via pings in a configurable interval."
 arch=('i686' 'x86_64')
@@ -10,7 +10,7 @@ license=('GPL')
 depends=('kdebase-workspace>=4.2')
 makedepends=('gcc' 'cmake' 'automoc4')
 source=("http://www.kde-look.org/CONTENT/content-files/101336-serverstatuswidget-${pkgver}.tar.bz2")
-md5sums=('025b6703de0fd4d8ab28d27e9523b896')
+md5sums=('3b871b20b35b0a990960a254039c4310')
 
 build() {
   cd "$srcdir/serverstatuswidget-$pkgver"
