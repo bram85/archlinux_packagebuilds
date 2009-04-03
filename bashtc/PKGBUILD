@@ -1,7 +1,7 @@
 # Contributor: Bram Schoenmakers <me@bramschoenmakers.nl>
 
 pkgname=bashtc
-pkgver=0.6.0
+pkgver=0.6.1
 pkgrel=1
 pkgdesc="A Twitter client for the command line on GNU/Linux operating systems."
 arch=('i686' 'x86_64')
@@ -9,15 +9,10 @@ url="http://bash.gmxhome.de/scripting.html"
 license=('GPL')
 depends=('bash' 'curl' 'elinks' 'lynx' 'mpg123' 'procps' 'util-linux-ng')
 install=(bashtc.install)
-source=('http://bash.gmxhome.de/scripting/bashtc'
-        'bashtc-mkdir.patch')
-md5sums=('9e33e170faf3514d0dcbc0ef85dc23bf'
-         'e54a7032b55df3836bf5cd092c99d7f2')
-build() {
-	cd ${srcdir}
+source=('http://bash.gmxhome.de/scripting/bashtc')
+md5sums=('e7778ce8ba5e1603bf389b4f71b1dd8c')
 
-	# bashtc does not automatically create its settings directory
-	patch < ${srcdir}/bashtc-mkdir.patch
+build() {
 	install -D -m 755 ${srcdir}/bashtc ${pkgdir}/usr/bin/bashtc
 }
 # vim:syntax=sh
