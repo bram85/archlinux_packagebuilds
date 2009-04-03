@@ -1,0 +1,24 @@
+# Contributor: Bram Schoenmakers <me@bramschoenmakers.nl>
+
+pkgname=bashic
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="An identi.ca client for the command line on GNU/Linux operating systems."
+arch=('i686' 'x86_64')
+url="http://bash.gmxhome.de/scripting.html"
+license=('GPL')
+depends=('bash' 'curl' 'elinks' 'lynx' 'mpg123' 'procps' 'util-linux-ng')
+install=(bashic.install)
+source=('http://bash.gmxhome.de/scripting/bashic'
+        'bashic-mkdir.patch')
+md5sums=('0e843cbc3b64b366cfa009807b57f123'
+         '2bddcfc86988d702dd7a50573ad35a09')
+
+build() {
+	cd ${srcdir}
+
+	# bashic does not automatically create its settings directory
+	patch < ${srcdir}/bashic-mkdir.patch
+	install -D -m 755 ${srcdir}/bashic ${pkgdir}/usr/bin/bashic
+}
+# vim:syntax=sh
