@@ -13,10 +13,10 @@ source=(http://downloads.sourceforge.net/pacpl/$pkgname-$pkgver.tar.gz)
 md5sums=('fb96c0f9e525dd9327c0212bd381fd8d')
 
 build() {
-	cd $startdir/src/$pkgname-$pkgver
+	cd ${srcdir}/$pkgname-$pkgver
 	./configure
 	make || return 1
-	make DESTDIR=$startdir/pkg install || return 1
-	rm -rf $startdir/pkg/usr/share/apps
+	make DESTDIR=${pkgdir} install || return 1
+	rm -rf ${pkgdir}/usr/share/apps
 }
 # vim:syntax=sh
