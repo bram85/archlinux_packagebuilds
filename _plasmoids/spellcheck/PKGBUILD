@@ -2,13 +2,14 @@
 
 pkgname=plasma-spellcheck-plasmoid
 pkgver=1.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Simple plasmoid for fast spell checking."
 arch=('i686' 'x86_64')
 url="http://www.kde-look.org/content/show.php?content=94113"
 license=('GPL')
 depends=('kdebase-workspace>=4.2')
 makedepends=('gcc' 'cmake' 'automoc4')
+install=spellcheck.install
 source=("http://www.kde-look.org/CONTENT/content-files/94113-spellcheck-$pkgver.tar.bz2")
 md5sums=('ecf49fdee2203aa9d5509ca1bc1302da')
 

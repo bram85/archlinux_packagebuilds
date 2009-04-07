@@ -2,13 +2,14 @@
 
 pkgname=plasma-lastmoid
 pkgver=0.4
-pkgrel=1
+pkgrel=2
 pkgdesc="Shows your Last.fm charts on your desktop."
 arch=('i686' 'x86_64')
 url="http://www.kde-look.org/content/show.php?content=98117"
 license=('GPL')
 depends=('kdebase-workspace')
 makedepends=('gcc' 'cmake' 'automoc4')
+install=lastmoid.install
 source=("http://www.kde-look.org/CONTENT/content-files/98117-Lastmoid0401.tar.gz")
 md5sums=('0aca729cee5de5e77b0970cef00b8079')
 

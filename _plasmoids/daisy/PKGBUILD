@@ -2,13 +2,14 @@
 
 pkgname=plasma-daisy-plasmoid
 pkgver=0.0.1
-pkgrel=1
+pkgrel=2
 pkgdesc="A simple application launcher for Plasma."
 arch=('i686' 'x86_64')
 url="http://lechio.freehostia.com/daisy.html"
 license=('GPL')
 depends=('kdebase-workspace')
 makedepends=('gcc' 'cmake' 'automoc4')
+install=daisy.install
 source=("http://lechio.freehostia.com/downloads/daisy-${pkgver}.tar.gz")
 md5sums=('9466c8e11198cf0055aa399565f23b79')
 

@@ -2,13 +2,14 @@
 
 pkgname=plasma-klicker-plasmoid
 pkgver=0.1.1
-pkgrel=1
+pkgrel=2
 pkgdesc="An icon application launcher with zooming."
 arch=('i686' 'x86_64')
 url="http://www.kde-look.org/content/show.php?content=99554"
 license=('GPL')
 depends=('kdebase-workspace')
 makedepends=('gcc' 'cmake' 'automoc4')
+install=klicker.install
 source=("http://www.kde-look.org/CONTENT/content-files/99554-klicker$pkgver.tar.gz")
 md5sums=('dc85a5d583c3576dfac57825d7cee567')
 
