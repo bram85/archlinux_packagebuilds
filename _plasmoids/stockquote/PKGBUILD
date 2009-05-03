@@ -1,8 +1,8 @@
 # Contributor: Bram Schoenmakers <me@bramschoenmakers.nl>
 
 pkgname=plasma-stockquote-plasmoid
-pkgver=2.0
-pkgrel=2
+pkgver=2.1
+pkgrel=1
 pkgdesc="Displays stock quotes on the desktop pulled from the Yahoo servers."
 arch=('i686' 'x86_64')
 url="http://www.kde-look.org/content/show.php?content=90695"
@@ -11,7 +11,7 @@ depends=('kdebase-workspace')
 makedepends=('gcc' 'cmake' 'automoc4')
 install=stockquote.install
 source=("http://www.kde-look.org/CONTENT/content-files/90695-plasma_stock_quote-$pkgver.tar.bz2")
-md5sums=('a06ec09dc6a78f73afe4017b63a7883f')
+md5sums=('ec2099065da1b61bcc8d6c435b87ca79')
 
 build() {
   cd "$srcdir/plasma_stock_quote-$pkgver"
