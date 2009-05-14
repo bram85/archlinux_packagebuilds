@@ -2,13 +2,14 @@
 # Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
 arch=(i686 x86_64)
 pkgname=choqok-svn
-pkgver=961640
+pkgver=967877
 pkgrel=1
 pkgdesc="A Twitter/identi.ca/laconica client for KDE 4."
 url="http://choqok.ospdev.net/"
 license="GPL"
 depends=('kdelibs')
 makedepends=('subversion' 'cmake' 'automoc4')
+conflicts=('choqok')
 
 source=()
 md5sums=()
