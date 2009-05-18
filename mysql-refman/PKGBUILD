@@ -1,0 +1,24 @@
+# Contributor: Bram Schoenmakers <me@bramschoenmakers.nl>
+
+pkgname=mysql-refman
+pkgver=5.1
+pkgrel=1
+pkgdesc="The MySQL reference manual"
+arch=('i686' 'x86_64')
+url="http://dev.mysql.com/doc/"
+license=('custom')
+options=()
+source=("http://downloads.mysql.com/docs/refman-$pkgver-en.html-chapter.tar.gz"
+        "COPYRIGHT")
+md5sums=('3822bc2096fa5d35cf71c1d7b1151818'
+         '2cb835d873c5585ed49f3345419f7abb')
+
+build() {
+        cd $srcdir
+        mkdir -p $pkgdir/usr/share/doc/mysql
+        cp -rl refman-$pkgver-en.html-chapter/* $pkgdir/usr/share/doc/mysql
+
+        # copyright / license
+        install -D -m644 $startdir/COPYRIGHT $pkgdir/usr/share/licenses/mysql-refman/COPYRIGHT
+}
+# vim:syntax=sh
