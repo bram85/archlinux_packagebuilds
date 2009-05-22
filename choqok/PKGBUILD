@@ -2,15 +2,15 @@
 # Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
 arch=(i686 x86_64)
 pkgname=choqok
-pkgver=0.5
+pkgver=0.6
 pkgrel=1
 pkgdesc="A Twitter/identi.ca/laconica client for KDE 4."
 url="http://choqok.ospdev.net/"
 license="GPL"
 depends=('kdelibs')
 makedepends=('cmake' 'automoc4')
-source=("ftp://download.ospdev.net/choqok/choqok/0.5Norooz/choqok-0.5.tar.bz2")
-md5sums=('b24b0f163e3b1e6ff725a285fd08b114')
+source=("ftp://download.ospdev.net/choqok/choqok/$pkgver/choqok-$pkgver.tar.bz2")
+md5sums=('0fb7ffd9425ac9d8c84165c841e04e8d')
 
 build() {
   cd $srcdir/$pkgname-$pkgver
