@@ -1,4 +1,4 @@
-# Contributor: Bram Schoenmakers <me@bramschoenmakers.nl>
+# Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
 
 pkgname=vim-debugger
 pkgver=1.0.2

@@ -1,4 +1,4 @@
-# Contributor: Bram Schoenmakers <me@bramschoenmakers.nl>
+# Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
 
 # WARNING: This PKGBUILD does not build with qt-3.3.8-9.
 # See http://bugs.archlinux.org/task/13194 for the patch

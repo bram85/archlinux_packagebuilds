@@ -1,4 +1,4 @@
-# Contributor: Bram Schoenmakers <me@bramschoenmakers.nl>
+# Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
 
 pkgname=mysql-refman
 pkgver=5.1

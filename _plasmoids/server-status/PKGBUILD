@@ -1,4 +1,4 @@
-# Contributor: Bram Schoenmakers <me@bramschoenmakers.nl>
+# Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
 
 pkgname=plasma-server-status-plasmoid
 pkgver=0.3
