@@ -1,7 +1,7 @@
 # Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
 
 pkgname=plasma-daisy-plasmoid
-pkgver=0.0.4.10
+pkgver=0.0.4.11
 pkgrel=1
 pkgdesc="A simple application launcher for Plasma."
 arch=('i686' 'x86_64')
@@ -11,7 +11,7 @@ depends=('kdebase-workspace')
 makedepends=('gcc' 'cmake' 'automoc4')
 install=daisy.install
 source=("http://lechio.freehostia.com/downloads/daisy-${pkgver}.tar.gz")
-md5sums=('99ae9634485dac71d0f3b0a3af1b3580')
+md5sums=('966b76aa443917a9714fd02875936636')
 
 build() {
   cd $srcdir/daisy-${pkgver}
