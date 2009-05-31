@@ -2,7 +2,7 @@
 
 pkgname=rapidminer
 pkgver=4.4
-pkgrel=1
+pkgrel=2
 pkgdesc="An open-source data mining solution."
 arch=('i686')
 url="http://rapid-i.com/"
@@ -39,6 +39,6 @@ build() {
   popd > /dev/null
 
   # desktop file
-  install -m 644 -D "${startdir}/rapidminer.desktop" "${pkgdir}/usr/share/applications/rapidminer.desktop" || return 1
+  install -m 644 -D "${srcdir}/rapidminer.desktop" "${pkgdir}/usr/share/applications/rapidminer.desktop" || return 1
 }
 # vim:syntax=sh

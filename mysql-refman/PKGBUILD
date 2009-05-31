@@ -2,7 +2,7 @@
 
 pkgname=mysql-refman
 pkgver=5.1
-pkgrel=1
+pkgrel=2
 pkgdesc="The MySQL reference manual"
 arch=('i686' 'x86_64')
 url="http://dev.mysql.com/doc/"
@@ -19,6 +19,6 @@ build() {
         cp -rl refman-$pkgver-en.html-chapter/* $pkgdir/usr/share/doc/mysql
 
         # copyright / license
-        install -D -m644 $startdir/COPYRIGHT $pkgdir/usr/share/licenses/mysql-refman/COPYRIGHT
+        install -D -m644 $srcdir/COPYRIGHT $pkgdir/usr/share/licenses/mysql-refman/COPYRIGHT
 }
 # vim:syntax=sh
