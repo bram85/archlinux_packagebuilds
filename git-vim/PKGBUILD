@@ -1,0 +1,35 @@
+# Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
+
+pkgname=git-vim
+# There are no releases, only a git repository
+pkgver=9999
+pkgrel=1
+pkgdesc="Provides Git plugins for Vim and syntax files for Git displays."
+arch=('i686' 'x86_64')
+url="http://github.com/motemen/git-vim/"
+license=('unknown')
+depends=('vim' 'git')
+makedepends=('git')
+install=
+source=()
+md5sums=()
+
+_gitroot="git://github.com/motemen/git-vim.git"
+_gitname="git-vim"
+
+build() {
+  cd $srcdir
+
+  # checkout
+  if [ -d ${srcdir}/$_gitname ] ; then
+    cd $_gitname && git pull origin
+  else
+    git clone $_gitroot $_gitname && cd $_gitname
+  fi
+
+  install -D -m 644 plugin/git.vim $pkgdir/usr/share/vim/plugin/git.vim
+  install -d -m 755 $pkgdir/usr/share/vim/syntax/
+  install -D -m 644 -t $pkgdir/usr/share/vim/syntax/ syntax/git-{diff,log,status}.vim
+}
+# vim:syntax=sh
+
