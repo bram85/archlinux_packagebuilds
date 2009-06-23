@@ -2,7 +2,7 @@
 
 pkgname=bashic
 pkgver=0.1.2
-pkgrel=1
+pkgrel=2
 pkgdesc="An identi.ca client for the command line on GNU/Linux operating systems."
 arch=('i686' 'x86_64')
 url="http://bash.gmxhome.de/scripting.html"
@@ -10,7 +10,7 @@ license=('GPL')
 depends=('bash' 'curl' 'elinks' 'lynx' 'mpg123' 'procps' 'util-linux-ng')
 install=(bashic.install)
 source=('http://bash.gmxhome.de/scripting/bashic')
-md5sums=('4437937f2c29cb39b1df5c082f3038f4')
+md5sums=('cf43356c4769761fa1681cd901c4f96b')
 
 build() {
 	install -D -m 755 ${srcdir}/bashic ${pkgdir}/usr/bin/bashic
