@@ -1,0 +1,27 @@
+# Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
+
+# Note: Some graphical tools crash on start. It should be investigated whether
+# this is an upstream bug or a packaging bug.
+
+pkgname=mcrl2
+pkgver=200901
+pkgrel=1
+pkgdesc="mCRL2 is a formal specification language with an associated toolset."
+arch=('i686' 'x86_64')
+url=('http://www.mcrl2.org')
+license=('custom')
+source=(http://www.win.tue.nl/mcrl2/download/release/$pkgname-$pkgver-src.tar.bz2)
+md5sums=('6ccd601c69bcdd7007ab1cc868a55149')
+
+build() {
+  cd $srcdir/$pkgname
+  ./configure --prefix=$pkgdir/usr
+  make || return 1
+  make install || return 1
+
+  install -d $pkgdir/usr/share/licenses/$pkgname
+  install -D -m 644 3rd-party/boost/LICENSE_1_0.txt $pkgdir/usr/share/licenses/$pkgname
+  install -D -m 644 3rd-party/aterm/COPYING $pkgdir/usr/share/licenses/$pkgname/aterm.license
+  install -D -m 644 3rd-party/ticpp/COPYING $pkgdir/usr/share/licenses/$pkgname/ticpp.license
+}
+# vim:syntax=sh
