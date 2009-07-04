@@ -1,31 +1,28 @@
 # Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
 
-# WARNING: This PKGBUILD does not build with qt-3.3.8-9.
-# See http://bugs.archlinux.org/task/13194 for the patch
-# and rebuild qt3 for the time being.
-
 pkgname=evolvotron
-pkgver=0.5.1
+pkgver=0.6.0
 pkgrel=1
 pkgdesc="An interactive generative art application"
 arch=('i686' 'x86_64')
 url="http://www.bottlenose.demon.co.uk/share/evolvotron/"
 license=('GPL')
-depends=('qt3')
+depends=('qt')
 makedepends=('boost')
 source=("http://downloads.sourceforge.net/evolvotron/$pkgname-$pkgver.tar.gz")
-md5sums=('aa20d89dd1c6947b80e83e456635cd12')
+md5sums=('8f436c65f436599f8857f8afc5907fe7')
 
 build() {
   cd $srcdir/$pkgname
-  source /etc/profile.d/qt3.sh
-  # This hack is needed since the Qt3 maintainer refuses to fix this (http://bugs.archlinux.org/task/11631)
-  export PATH=$QTDIR/bin:$PATH
+
+  # the configure script uses qmake-qt4 binary, which does not exist
+  sed -i '' -e s/qmake-qt4/qmake/g configure
   ./configure
 
   make || return 1
 
-  for bin in ${pkgname}{,_match,_mutate,_render}; do
+  # install
+  for bin in ${pkgname}{,_mutate,_render}; do
     install -D -m 755 $bin/$bin $pkgdir/usr/bin/$bin
   done
   for man in ${pkgname}{,_mutate,_render}.1; do
