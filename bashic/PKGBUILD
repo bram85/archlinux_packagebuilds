@@ -9,7 +9,7 @@ url="http://bash.gmxhome.de/scripting.html"
 license=('GPL')
 depends=('bash' 'curl' 'elinks' 'lynx' 'mpg123' 'procps' 'util-linux-ng')
 install=(bashic.install)
-source=('http://bash.gmxhome.de/scripting/bashic')
+source=("http://bash.gmxhome.de/scripting/$pkgname-$pkgver")
 md5sums=('cf43356c4769761fa1681cd901c4f96b')
 
 build() {
