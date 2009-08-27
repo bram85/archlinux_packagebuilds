@@ -2,12 +2,13 @@
 # Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
 pkgname=pacpl
 pkgver=4.0.5
-pkgrel=1
+pkgrel=2
 pkgdesc="Convert multiple audio types from one format to another. Dolphin/Konqueror Integration."
 arch=('i686')
 url="http://pacpl.sourceforge.net/"
 license=('GPL')
-depends=('kdebase' 'perl' 'perl-parse-recdescent' 'perl-inline' 'libogg' 'libvorbis' 'flac' 'perl-ogg-vorbis-header' 'perl-mp3-info' 'perl-mp4-info' 'perl-mp3-tag' 'perl-audio-wma' 'perl-audio-flac-header' 'perl-audio-musepack' 'cddb_get')
+# change the first dependency to kdebase-konqueror if you prefer Konqueror
+depends=('kdebase-dolphin' 'perl' 'perl-parse-recdescent' 'perl-inline' 'libogg' 'libvorbis' 'flac' 'perl-ogg-vorbis-header' 'perl-mp3-info' 'perl-mp4-info' 'perl-mp3-tag' 'perl-audio-wma' 'perl-audio-flac-header' 'perl-audio-musepack' 'cddb_get')
 install=$pkgname.install
 source=(http://downloads.sourceforge.net/pacpl/$pkgname-$pkgver.tar.gz)
 md5sums=('fb96c0f9e525dd9327c0212bd381fd8d')
