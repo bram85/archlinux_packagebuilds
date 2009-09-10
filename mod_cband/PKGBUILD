@@ -1,7 +1,7 @@
 # Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
 
 pkgname=mod_cband
-pkgver=0.9.7.4
+pkgver=0.9.7.5
 pkgrel=1
 pkgdesc='An Apache 2 module to control bandwidth.'
 arch=('i686' 'x86_64')
@@ -10,7 +10,7 @@ depends=('apache')
 source=("http://cband.linux.pl/download/mod-cband-$pkgver.tgz")
 license=('GPL-2')
 install=('mod_cband.install')
-md5sums=('ff635d7b55bf7ca648d319247dfb45e3')
+md5sums=('5c5d65dc9abe6cdc6931b6dd33be5018')
 
 build() {
   cd $srcdir/mod-cband-$pkgver
