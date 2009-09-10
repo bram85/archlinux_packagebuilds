@@ -1,7 +1,7 @@
 # Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
 
 pkgname=evolvotron
-pkgver=0.6.0
+pkgver=0.6.1
 pkgrel=1
 pkgdesc="An interactive generative art application"
 arch=('i686' 'x86_64')
@@ -10,7 +10,7 @@ license=('GPL')
 depends=('qt')
 makedepends=('boost')
 source=("http://downloads.sourceforge.net/evolvotron/$pkgname-$pkgver.tar.gz")
-md5sums=('8f436c65f436599f8857f8afc5907fe7')
+md5sums=('88ae3cfdef11e7e7f4859b7847cbcaf6')
 
 build() {
   cd $srcdir/$pkgname
