@@ -1,22 +1,23 @@
 # Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
 
 pkgname=vim-pyflakes
-pkgver=1.5
-_scriptid=10971
+pkgver=1.55
+_scriptid=11396
 pkgrel=1
 pkgdesc='Vim plugin which highlights common Python errors like misspelling a variable name on the fly.'
 arch=('i686' 'x86_64')
 url='http://www.vim.org/scripts/script.php?script_id=2441'
 depends=('vim' 'python>=2.5')
+install=vim-pyflakes.install
 source=("http://www.vim.org/scripts/download_script.php?src_id=$_scriptid")
 license=('unknown')
-md5sums=('d136b5dfbcb472c6496dbd4aa12894aa')
+md5sums=('cbe1eb273ecbd9cc9905e2191d58dff6')
 
 build() {
   cd $srcdir
 
-  install -D -m644 $srcdir/pyflakes.vim $pkgdir/usr/share/vim/after/ftplugin/python/pyflakes.vim
-  cp -r pyflakes $pkgdir/usr/share/vim/after/ftplugin/python/pyflakes
+  install -D -m644 $srcdir/pyflakes.vim $pkgdir/usr/share/vim/vimfiles/after/ftplugin/python/pyflakes.vim
+  cp -r pyflakes $pkgdir/usr/share/vim/vimfiles/after/ftplugin/python/pyflakes
 }
 # vim:syntax=sh
 

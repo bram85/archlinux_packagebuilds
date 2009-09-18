@@ -1,0 +1,5 @@
+post_install()
+{
+        echo "You need to have vim installed with the --enable-pythoninterp."
+        echo "The official Arch Linux packages no longer have this option enabled."
+}
