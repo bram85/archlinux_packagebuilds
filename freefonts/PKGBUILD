@@ -2,9 +2,9 @@
 
 pkgname=freefonts
 pkgver=0.10
-pkgrel=1
+pkgrel=2
 pkgdesc="A set of free Type1 fonts."
-arch=('i686' 'x86_64')
+arch=('any')
 url="http://www.gimp.org/"
 license=('custom')
 makedepends=('fontconfig' 'xorg-font-utils')

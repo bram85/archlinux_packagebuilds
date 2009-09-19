@@ -2,10 +2,10 @@
 
 pkgname=git-vim
 # There are no releases, only a git repository
-pkgver=20090918
+pkgver=20090920
 pkgrel=1
 pkgdesc="Provides Git plugins for Vim and syntax files for Git displays."
-arch=('i686' 'x86_64')
+arch=('any')
 url="http://github.com/motemen/git-vim/"
 license=('unknown')
 depends=('vim' 'git')

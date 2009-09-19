@@ -2,9 +2,9 @@
 
 pkgname=mysql-refman
 pkgver=5.1
-pkgrel=2
+pkgrel=3
 pkgdesc="The MySQL reference manual"
-arch=('i686' 'x86_64')
+arch=('any')
 url="http://dev.mysql.com/doc/"
 license=('custom')
 options=()

@@ -2,9 +2,9 @@
 # Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
 pkgname=pacpl
 pkgver=4.0.5
-pkgrel=2
+pkgrel=3
 pkgdesc="Convert multiple audio types from one format to another. Dolphin/Konqueror Integration."
-arch=('i686')
+arch=('any')
 url="http://pacpl.sourceforge.net/"
 license=('GPL')
 # change the first dependency to kdebase-konqueror if you prefer Konqueror

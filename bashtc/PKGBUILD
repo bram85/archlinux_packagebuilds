@@ -2,9 +2,9 @@
 
 pkgname=bashtc
 pkgver=0.6.1
-pkgrel=1
+pkgrel=2
 pkgdesc="A Twitter client for the command line on GNU/Linux operating systems."
-arch=('i686' 'x86_64')
+arch=('any')
 url="http://bash.gmxhome.de/scripting.html"
 license=('GPL')
 depends=('bash' 'curl' 'elinks' 'lynx' 'mpg123' 'procps' 'util-linux-ng')

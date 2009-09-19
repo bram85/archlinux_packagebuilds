@@ -2,9 +2,9 @@
 
 pkgname=bashic
 pkgver=0.1.2
-pkgrel=2
+pkgrel=3
 pkgdesc="An identi.ca client for the command line on GNU/Linux operating systems."
-arch=('i686' 'x86_64')
+arch=('any')
 url="http://bash.gmxhome.de/scripting.html"
 license=('GPL')
 depends=('bash' 'curl' 'elinks' 'lynx' 'mpg123' 'procps' 'util-linux-ng')
