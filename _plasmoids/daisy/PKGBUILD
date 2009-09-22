@@ -11,7 +11,7 @@ depends=('kdebase-workspace')
 makedepends=('gcc' 'cmake' 'automoc4')
 install=daisy.install
 source=("http://daisyplasma.freehostia.com/downloads/plasma-applet-daisy-$pkgver.tar.gz")
-md5sums=('44821b3507197f09c0b1cb9bc79b6c2b')
+md5sums=('f0b0d65fe47dff29e9206b93e58a9b13')
 
 build() {
   cd $srcdir/plasma-applet-daisy-${pkgver}
