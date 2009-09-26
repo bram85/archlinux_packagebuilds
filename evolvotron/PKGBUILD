@@ -2,7 +2,7 @@
 
 pkgname=evolvotron
 pkgver=0.6.1
-pkgrel=1
+pkgrel=2
 pkgdesc="An interactive generative art application"
 arch=('i686' 'x86_64')
 url="http://www.bottlenose.demon.co.uk/share/evolvotron/"
@@ -19,7 +19,7 @@ build() {
   sed -i '' -e s/qmake-qt4/qmake/g configure
   ./configure
 
-  make || return 1
+  make -j1 || return 1
 
   # install
   for bin in ${pkgname}{,_mutate,_render}; do
