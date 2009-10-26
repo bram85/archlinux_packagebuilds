@@ -1,10 +1,10 @@
 # Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
 
 pkgname=rapidminer
-pkgver=4.5
+pkgver=4.6
 pkgrel=1
 pkgdesc="An open-source data mining solution."
-arch=('i686')
+arch=('i686' 'x86_64')
 url="http://rapid-i.com/"
 license=('custom')
 depends=(java-runtime)
@@ -12,7 +12,7 @@ install=
 source=(http://downloads.sourceforge.net/yale/$pkgname-$pkgver-community.zip
         rapidminer.desktop)
 noextract=()
-md5sums=('cc3bd64f31181e08952cc9549bbed3cd'
+md5sums=('245a27998422584dd94bc866601ed188'
          'd0dbcb8ad72c285efec9740c1cda65e0')
 
 build() {
@@ -27,7 +27,7 @@ build() {
   # Also set the JAVA_HOME
   sed -i'' -e "s|^#RAPIDMINER_HOME=\\\${HOME}\$|RAPIDMINER_HOME=/opt/rapidminer\nJAVA_HOME=${JAVA_HOME}|" scripts/rapidminer
   sed -i'' -e "s|^#RAPIDMINER_HOME=\\\${HOME}\$|RAPIDMINER_HOME=/opt/rapidminer\nJAVA_HOME=${JAVA_HOME}|" scripts/RapidMinerGUI
- 
+
   # Install files into prefix
   find {lib,etc,resources} -type f -exec install -m 644 -D {} ${pkgdir}/opt/rapidminer/{} \;
   install -m 755 -D scripts/rapidminer ${pkgdir}/opt/rapidminer/bin/rapidminer
