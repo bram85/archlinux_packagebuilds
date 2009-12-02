@@ -1,7 +1,7 @@
 # Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
 
 pkgname=plasma-lastmoid
-pkgver=0.6
+pkgver=0.6.5
 pkgrel=1
 pkgdesc="Shows your Last.fm charts on your desktop."
 arch=('i686' 'x86_64')
@@ -10,11 +10,11 @@ license=('GPL')
 depends=('kdebase-workspace')
 makedepends=('gcc' 'cmake' 'automoc4')
 install=lastmoid.install
-source=("http://kde-look.org/CONTENT/content-files/98117-lastmoid-${pkgver}.tar.gz")
-md5sums=('ba038342f2c17de1819c8a0f58525de1')
+source=("http://kde-look.org/CONTENT/content-files/98117-vavrusa-lastmoid-2041bf6.tar.gz")
+md5sums=('68674e24774f4d029f29e96795b5e8a0')
 
 build() {
-  cd "$srcdir/vavrusa-lastmoid-9243166"
+  cd "$srcdir/vavrusa-lastmoid-2041bf6"
   mkdir build && cd build
   cmake -DCMAKE_INSTALL_PREFIX=/usr .. || return 1
   make || return 1
