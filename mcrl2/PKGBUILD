@@ -5,7 +5,7 @@
 
 pkgname=mcrl2
 pkgver=200901
-pkgrel=1
+pkgrel=2
 pkgdesc="mCRL2 is a formal specification language with an associated toolset."
 arch=('i686' 'x86_64')
 url=('http://www.mcrl2.org')
@@ -15,7 +15,10 @@ md5sums=('6ccd601c69bcdd7007ab1cc868a55149')
 
 build() {
   cd $srcdir/$pkgname
-  ./configure --prefix=$pkgdir/usr
+  # FIXME: --enable-static, because the tools cannot find the libraries in /usr/lib/mcrl2
+  # (unless you set LD_LIBRARY_PATH prior to each execution)
+  # This is ought to be fixed in the next release.
+  ./configure --prefix=$pkgdir/usr --enable-static
   make || return 1
   make install || return 1
 
