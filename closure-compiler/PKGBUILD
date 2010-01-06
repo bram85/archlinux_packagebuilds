@@ -1,16 +1,15 @@
 # Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
 
 pkgname=closure-compiler
-pkgver=9999
+pkgver=20091217
 pkgrel=1
 pkgdesc="Performs checking, instrumentation and optimizations on Javascript code."
 arch=('i686' 'x86_64')
 url="http://code.google.com/closure"
 license=('APACHE')
 depends=(java-environment)
-source=($pkgname-$pkgver.tar.gz)
-source=(http://closure-compiler.googlecode.com/files/compiler-latest.zip)
-md5sums=('79ca000541c44313f36ce13d15d67c64')
+source=(http://closure-compiler.googlecode.com/files/compiler-${pkgver}.tar.gz)
+md5sums=('4b9fdf102de8f720bcc0ede48e01779a')
 
 build() {
   cd $srcdir
