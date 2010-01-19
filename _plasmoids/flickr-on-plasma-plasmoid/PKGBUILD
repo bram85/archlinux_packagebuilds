@@ -2,7 +2,7 @@
 # Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
 
 pkgname=flickr-on-plasma-plasmoid
-pkgver=0.7
+pkgver=0.7.1
 pkgrel=1
 pkgdesc="A Plasma applet showing the most interesting pictures on Flickr."
 arch=('i686' 'x86_64')
@@ -12,7 +12,7 @@ depends=('kdebase-workspace>=4.1.0' 'kdeedu-marble')
 makedepends=('gcc' 'cmake' 'automoc4')
 install=flickrop.install
 source=("http://www.bramschoenmakers.nl/files/flickrop-$pkgver.tar.bz2")
-md5sums=('d21c86ea457bc25c180832da3979d699')
+md5sums=('b0ced248f59d35cdd8c3c0d913cf4ced')
 
 build() {
   cd "$srcdir/flickrop-$pkgver"

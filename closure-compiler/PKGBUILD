@@ -1,0 +1,22 @@
+# Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
+
+pkgname=closure-compiler
+pkgver=20091217
+pkgrel=1
+pkgdesc="Performs checking, instrumentation and optimizations on Javascript code."
+arch=('i686' 'x86_64')
+url="http://code.google.com/closure"
+license=('APACHE')
+depends=(java-environment)
+source=(http://closure-compiler.googlecode.com/files/compiler-${pkgver}.tar.gz)
+md5sums=('4b9fdf102de8f720bcc0ede48e01779a')
+
+build() {
+  cd $srcdir
+  install -m755 -D compiler.jar $pkgdir/usr/share/java/closure-compiler/closure-compiler.jar
+  mkdir $pkgdir/usr/bin
+  echo '#!/bin/sh
+"$JAVA_HOME/bin/java" -jar /usr/share/java/closure-compiler/closure-compiler.jar $@' > $pkgdir/usr/bin/closure
+  chmod +x $pkgdir/usr/bin/closure
+}
+# vim:syntax=sh
