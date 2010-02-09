@@ -2,9 +2,9 @@
 
 pkgname=qtflickr
 pkgver=0.9
-pkgrel=1
+pkgrel=2
 pkgdesc="A C++ library for the Flickr API written with the Qt framework."
-arch=('i686' 'x86_64')
+arch=('i686')
 url="http://qtflickr.com/"
 license=('LGPL')
 depends=('qt')
