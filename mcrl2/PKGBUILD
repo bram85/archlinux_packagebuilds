@@ -1,30 +1,23 @@
 # Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
 
-# Note: Some graphical tools crash on start. It should be investigated whether
-# this is an upstream bug or a packaging bug.
-
 pkgname=mcrl2
-pkgver=200901
-pkgrel=2
+pkgver=201001
+pkgrel=1
 pkgdesc="mCRL2 is a formal specification language with an associated toolset."
 arch=('i686' 'x86_64')
+depends=('wxgtk')
+makedepends=('cmake')
 url=('http://www.mcrl2.org')
 license=('custom')
 source=(http://www.win.tue.nl/mcrl2/download/release/$pkgname-$pkgver-src.tar.bz2)
-md5sums=('6ccd601c69bcdd7007ab1cc868a55149')
+md5sums=('6178374c7c1210753b3dc1914a3aab42')
 
 build() {
-  cd $srcdir/$pkgname
-  # FIXME: --enable-static, because the tools cannot find the libraries in /usr/lib/mcrl2
-  # (unless you set LD_LIBRARY_PATH prior to each execution)
-  # This is ought to be fixed in the next release.
-  ./configure --prefix=$pkgdir/usr --enable-static
-  make || return 1
-  make install || return 1
+  mkdir $srcdir/build
+  cd $srcdir/build
 
-  install -d $pkgdir/usr/share/licenses/$pkgname
-  install -D -m 644 3rd-party/boost/LICENSE_1_0.txt $pkgdir/usr/share/licenses/$pkgname
-  install -D -m 644 3rd-party/aterm/COPYING $pkgdir/usr/share/licenses/$pkgname/aterm.license
-  install -D -m 644 3rd-party/ticpp/COPYING $pkgdir/usr/share/licenses/$pkgname/ticpp.license
+  cmake -DCMAKE_INSTALL_PREFIX=/usr $srcdir/$pkgname || return 1
+  make || return 1
+  make DESTDIR=$pkgdir install || return 1
 }
 # vim:syntax=sh
