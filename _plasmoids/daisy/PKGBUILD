@@ -2,7 +2,7 @@
 
 pkgname=plasma-daisy-plasmoid
 pkgver=0.0.4.22
-pkgrel=2
+pkgrel=3
 pkgdesc="A simple application launcher for Plasma."
 arch=('i686' 'x86_64')
 url="http://lechio.freehostia.com/daisy.html"
@@ -11,11 +11,17 @@ depends=('kdebase-workspace')
 makedepends=('gcc' 'cmake' 'automoc4')
 conflicts=('kde-extragear-plasmoids')
 install=daisy.install
-source=("http://daisyplasma.freehostia.com/downloads/plasma-applet-daisy-$pkgver.tar.gz")
-md5sums=('ef1bc3dd2e47d04d5a21b6a54dcbd7e9')
+source=("http://daisyplasma.freehostia.com/downloads/plasma-applet-daisy-$pkgver.tar.gz"
+        "daisy-compile-fix.patch")
+md5sums=('ef1bc3dd2e47d04d5a21b6a54dcbd7e9'
+         '01fcd94404c3cc46ae517ad10b9b5c52')
 
 build() {
   cd $srcdir/plasma-applet-daisy-${pkgver}
+
+  # Fix compile errors, introduced with GCC 4.5
+  patch -p1 < $srcdir/daisy-compile-fix.patch
+
   mkdir build && cd build
   cmake -DCMAKE_INSTALL_PREFIX=/usr .. || return 1
   make || return 1
