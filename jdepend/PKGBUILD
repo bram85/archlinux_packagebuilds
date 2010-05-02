@@ -2,7 +2,7 @@
 
 pkgname=jdepend
 pkgver=2.9
-pkgrel=1
+pkgrel=2
 pkgdesc="Traverses Java class file directories and generates design quality metrics for each Java package."
 arch=('any')
 url="http://clarkware.com/software/JDepend.html"
@@ -20,19 +20,19 @@ build() {
   # GUI
   echo "#!/bin/sh
 
-java -cp /usr/share/java/$pkgname/$pkgname-$pkgver.jar jdepend.swingui.JDepend" > $pkgdir/usr/bin/jdepend-gui
+java -cp /usr/share/java/$pkgname/$pkgname-$pkgver.jar jdepend.swingui.JDepend \$@" > $pkgdir/usr/bin/jdepend-gui
   chmod +x $pkgdir/usr/bin/jdepend-gui
 
   # Text
   echo "#!/bin/sh
 
-java -cp /usr/share/java/$pkgname/$pkgname-$pkgver.jar jdepend.textui.JDepend" > $pkgdir/usr/bin/jdepend
+java -cp /usr/share/java/$pkgname/$pkgname-$pkgver.jar jdepend.textui.JDepend \$@" > $pkgdir/usr/bin/jdepend
   chmod +x $pkgdir/usr/bin/jdepend
 
   # XML
   echo "#!/bin/sh
 
-java -cp /usr/share/java/$pkgname/$pkgname-$pkgver.jar jdepend.xmlui.JDepend" > $pkgdir/usr/bin/jdepend-xml
+java -cp /usr/share/java/$pkgname/$pkgname-$pkgver.jar jdepend.xmlui.JDepend \$@" > $pkgdir/usr/bin/jdepend-xml
   chmod +x $pkgdir/usr/bin/jdepend-xml
 }
 # vim:syntax=sh
