@@ -1,7 +1,7 @@
 # Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
 
 pkgname=plasma-gx-mail-notify-plasmoid
-pkgver=0.4.2
+pkgver=0.4.3
 pkgrel=1
 pkgdesc="Plasmoid for checking unreaded e-mails."
 arch=('i686' 'x86_64')
@@ -10,11 +10,17 @@ license=('GPL')
 depends=('kdebase-workspace')
 makedepends=('gcc' 'cmake' 'automoc4')
 install=gxmailnotify.install
-source=("http://www.kde-look.org/CONTENT/content-files/99617-gx_mail_notify-$pkgver.tar.bz2")
-md5sums=('723c25db50dfde9dcc1543bd27d1056d')
+source=("http://www.kde-look.org/CONTENT/content-files/99617-gx_mail_notify-$pkgver.tar.bz2"
+        "gxmail-fix-compile.patch" )
+md5sums=('9960ff20809d5d2554a8b65f23726e3b'
+         '23c19988b5308ca6fb66c50eb6715c72')
 
 build() {
   cd "$srcdir"/gx_mail_notify-$pkgver
+
+  # Fix compilation
+  patch -p1 < $srcdir/gxmail-fix-compile.patch
+
   mkdir build && cd build
   cmake -DCMAKE_INSTALL_PREFIX=/usr .. || return 1
   make || return 1
