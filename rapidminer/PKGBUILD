@@ -1,22 +1,23 @@
 # Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
 
 pkgname=rapidminer
-pkgver=4.6
+pkgver=5.0
 pkgrel=1
 pkgdesc="An open-source data mining solution."
 arch=('i686' 'x86_64')
 url="http://rapid-i.com/"
 license=('custom')
 depends=(java-runtime)
+optdepends=(gnuplot)
 install=
-source=(http://downloads.sourceforge.net/yale/$pkgname-$pkgver-community.zip
+source=(http://downloads.sourceforge.net/project/yale/1.%20RapidMiner/$pkgver/$pkgname-5.0.006.zip
         rapidminer.desktop)
 noextract=()
-md5sums=('245a27998422584dd94bc866601ed188'
+md5sums=('3e9e6baa2428ff9500f3227572a2bca0'
          'd0dbcb8ad72c285efec9740c1cda65e0')
 
 build() {
-  cd $srcdir/$pkgname-$pkgver
+  cd $srcdir/$pkgname
 
   # Determine JAVA_HOME
   [ -f /etc/profile.d/openjdk6.sh ] && source /etc/profile.d/openjdk6.sh
@@ -29,7 +30,7 @@ build() {
   sed -i'' -e "s|^#RAPIDMINER_HOME=\\\${HOME}\$|RAPIDMINER_HOME=/opt/rapidminer\nJAVA_HOME=${JAVA_HOME}|" scripts/RapidMinerGUI
 
   # Install files into prefix
-  find {lib,etc,resources} -type f -exec install -m 644 -D {} ${pkgdir}/opt/rapidminer/{} \;
+  find {lib,resources} -type f -exec install -m 644 -D {} ${pkgdir}/opt/rapidminer/{} \;
   install -m 755 -D scripts/rapidminer ${pkgdir}/opt/rapidminer/bin/rapidminer
   install -m 755 -D scripts/RapidMinerGUI ${pkgdir}/opt/rapidminer/bin/RapidMinerGUI
 
