@@ -5,8 +5,8 @@
 _havedocs=0
 
 pkgname=bup
-pkgver=0.14a
-pkgrel=2
+pkgver=0.15
+pkgrel=1
 pkgdesc="Backup tool using git pack files."
 arch=('i686' 'x86_64')
 url="http://github.com/apenwarr/bup"
@@ -15,11 +15,11 @@ depends=('python-fuse' 'par2cmdline')
 [ $_havedocs = 1 ] && makedepends=('pandoc')
 source=("http://github.com/apenwarr/bup/tarball/$pkgname-$pkgver"
         'dont_install_docs.patch' )
-md5sums=('7f93dcc13b0af5531b70509cce50a64e'
+md5sums=('42b56c7f912d4d823518ece6003fbe0d'
          '94a3216067a38e2df22d96388ff9c887')
 
 build() {
-  cd $srcdir/apenwarr-bup-8333243
+  cd $srcdir/apenwarr-bup-696cda7
 
   [ $_havedocs = 0 ] && patch < $srcdir/dont_install_docs.patch
 
