@@ -2,7 +2,7 @@
 
 pkgname=mysql-refman
 pkgver=5.1
-pkgrel=3
+pkgrel=4
 pkgdesc="The MySQL reference manual"
 arch=('any')
 url="http://dev.mysql.com/doc/"
@@ -10,7 +10,7 @@ license=('custom')
 options=()
 source=("http://downloads.mysql.com/docs/refman-$pkgver-en.html-chapter.tar.gz"
         "COPYRIGHT")
-md5sums=('3822bc2096fa5d35cf71c1d7b1151818'
+md5sums=('790ed2a7100b7f817ccc4ee73956eca0'
          '2cb835d873c5585ed49f3345419f7abb')
 
 build() {
