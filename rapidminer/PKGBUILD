@@ -2,7 +2,7 @@
 
 pkgname=rapidminer
 pkgver=5.0.008
-pkgrel=1
+pkgrel=2
 pkgdesc="An open-source data mining solution."
 arch=('i686' 'x86_64')
 url="http://rapid-i.com/"
@@ -10,7 +10,7 @@ license=('custom')
 depends=(java-runtime)
 optdepends=(gnuplot)
 install=
-source=(http://downloads.sourceforge.net/project/yale/1.%20RapidMiner/$pkgver/$pkgname-5.0.008.zip
+source=(http://downloads.sourceforge.net/project/yale/1.%20RapidMiner/5.0/$pkgname-$pkgver.zip
         rapidminer.desktop)
 noextract=()
 md5sums=('4d1226b286af36c2e4f954b189c86dbc'
