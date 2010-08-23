@@ -2,7 +2,7 @@
 
 pkgname=rapidminer
 pkgver=5.0.008
-pkgrel=2
+pkgrel=3
 pkgdesc="An open-source data mining solution."
 arch=('i686' 'x86_64')
 url="http://rapid-i.com/"
@@ -21,7 +21,7 @@ build() {
 
   # Determine JAVA_HOME
   [ -f /etc/profile.d/openjdk6.sh ] && source /etc/profile.d/openjdk6.sh
-  [ -z "$JAVA_HOME" ] && [ -f "/etc/profile.d/openjdk6.sh" ] && source /etc/profile.d/openjdk6.sh
+  [ -z "$JAVA_HOME" ] && [ -f "/etc/profile.d/jre.sh" ] && source /etc/profile.d/jre.sh
   [ -z "$JAVA_HOME" ] && ( echo "Could not determine JAVA_HOME."; return 1 )
 
   # Modify scripts such that the /opt/rapidminer prefix is recognized.
