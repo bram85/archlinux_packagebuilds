@@ -2,7 +2,7 @@
 
 pkgname=monetdb-geom
 pkgver=0.16.3
-pkgrel=1
+pkgrel=2
 pkgdesc="Provides geometry functionality to the MonetDB database system."
 arch=('i686' 'x86_64')
 url="http://monetdb.cwi.nl/"
@@ -16,7 +16,7 @@ build() {
   cd $srcdir/build
 
   $srcdir/MonetDB-geom-$pkgver/configure --prefix=/usr --enable-optimize --disable-debug --disable-assert
-  make || return 1
+  make
   make DESTDIR=$pkgdir install
 }
 # vim:syntax=sh

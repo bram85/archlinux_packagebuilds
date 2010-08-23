@@ -2,7 +2,7 @@
 
 pkgname=plasma-lastmoid
 pkgver=0.6.5
-pkgrel=1
+pkgrel=2
 pkgdesc="Shows your Last.fm charts on your desktop."
 arch=('i686' 'x86_64')
 url="http://www.kde-look.org/content/show.php?content=98117"
@@ -16,8 +16,8 @@ md5sums=('68674e24774f4d029f29e96795b5e8a0')
 build() {
   cd "$srcdir/vavrusa-lastmoid-2041bf6"
   mkdir build && cd build
-  cmake -DCMAKE_INSTALL_PREFIX=/usr .. || return 1
-  make || return 1
-  make DESTDIR="$pkgdir/" install || return 1
+  cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+  make
+  make DESTDIR="$pkgdir/" install
 }
 # vim:syntax=sh

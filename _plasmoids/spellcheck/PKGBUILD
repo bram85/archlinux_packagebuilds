@@ -2,7 +2,7 @@
 
 pkgname=plasma-spellcheck-plasmoid
 pkgver=2.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Simple plasmoid for fast spell checking."
 arch=('i686' 'x86_64')
 url="http://www.kde-look.org/content/show.php?content=94113"
@@ -16,8 +16,8 @@ md5sums=('4b6ca56f0e8af4741b91a5b7a8c1eec4')
 build() {
   cd "$srcdir/spellcheck-$pkgver"
   mkdir build && cd build
-  cmake -DCMAKE_INSTALL_PREFIX=/usr .. || return 1
-  make || return 1
-  make DESTDIR="$pkgdir/" install || return 1
+  cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+  make
+  make DESTDIR="$pkgdir/" install
 }
 # vim:syntax=sh

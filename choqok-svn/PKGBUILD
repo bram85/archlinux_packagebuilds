@@ -2,7 +2,7 @@
 # Maintainer: Bram Schoenmakers <me@bramschoenmakers.nl>
 arch=(i686 x86_64)
 pkgname=choqok-svn
-pkgver=1151294
+pkgver=1167077
 pkgrel=1
 pkgdesc="A Twitter/identi.ca/laconica client for KDE 4."
 url="http://choqok.gnufolks.org"
@@ -34,7 +34,7 @@ build() {
   cd $_svnmod-build
 
   cmake -DCMAKE_BUILD_TYPE=debugfull -DCMAKE_INSTALL_PREFIX=/usr .
-  make || return 1
+  make
   make DESTDIR=${pkgdir} install
 
   rm -rf ${srcdir}/$_svnmod-build

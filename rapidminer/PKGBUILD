@@ -40,6 +40,6 @@ build() {
   popd > /dev/null
 
   # desktop file
-  install -m 644 -D "${srcdir}/rapidminer.desktop" "${pkgdir}/usr/share/applications/rapidminer.desktop" || return 1
+  install -m 644 -D "${srcdir}/rapidminer.desktop" "${pkgdir}/usr/share/applications/rapidminer.desktop"
 }
 # vim:syntax=sh

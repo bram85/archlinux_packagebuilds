@@ -2,7 +2,7 @@
 
 pkgname=mod_cband
 pkgver=0.9.7.5
-pkgrel=1
+pkgrel=2
 pkgdesc='An Apache 2 module to control bandwidth.'
 arch=('i686' 'x86_64')
 url='http://cband.linux.pl'
@@ -15,8 +15,8 @@ md5sums=('5c5d65dc9abe6cdc6931b6dd33be5018')
 build() {
   cd $srcdir/mod-cband-$pkgver
 
-  ./configure --prefix=$pkgdir || return 1
-  make || return 1
+  ./configure --prefix=$pkgdir
+  make
   # DESTDIR is unsupported, --prefix=$pkgdir does not work
   install -D -m755 src/.libs/mod_cband.so $pkgdir/usr/lib/httpd/modules/mod_cband.so
 }

@@ -2,7 +2,7 @@
 
 pkgname=coldstorage-git
 # There are no releases, only a git repository
-pkgver=20091208
+pkgver=20100823
 pkgrel=1
 pkgdesc="A backup tool using Git."
 arch=('i686' 'x86_64')
@@ -26,8 +26,8 @@ build() {
     git clone --depth 1 $_gitroot $_gitname && cd $_gitname
   fi
 
-  qmake || return 1
-  make || return 1
+  qmake
+  make
   install -D -m 755 coldstorage $pkgdir/usr/bin/coldstorage
 }
 # vim:syntax=sh

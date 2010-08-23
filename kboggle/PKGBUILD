@@ -2,7 +2,7 @@
 
 pkgname=kboggle
 pkgver=0.4.1
-pkgrel=1
+pkgrel=2
 pkgdesc="A Boggle game for KDE"
 arch=('i686' 'x86_64')
 url="http://www.kde-apps.org/content/show.php?content=26195"
@@ -15,7 +15,7 @@ md5sums=('e59939aa274b2e87861310241bce7a92')
 build() {
   cd $srcdir/$pkgname-$pkgver
   ./configure --prefix=/opt/kde --without-arts
-  make || return 1
-  make DESTDIR=$pkgdir install || return 1
+  make
+  make DESTDIR=$pkgdir install
 }
 # vim:syntax=sh

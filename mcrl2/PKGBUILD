@@ -2,7 +2,7 @@
 
 pkgname=mcrl2
 pkgver=201001
-pkgrel=1
+pkgrel=2
 pkgdesc="mCRL2 is a formal specification language with an associated toolset."
 arch=('i686' 'x86_64')
 depends=('wxgtk')
@@ -16,8 +16,8 @@ build() {
   mkdir $srcdir/build
   cd $srcdir/build
 
-  cmake -DCMAKE_INSTALL_PREFIX=/usr $srcdir/$pkgname || return 1
-  make || return 1
-  make DESTDIR=$pkgdir install || return 1
+  cmake -DCMAKE_INSTALL_PREFIX=/usr $srcdir/$pkgname
+  make
+  make DESTDIR=$pkgdir install
 }
 # vim:syntax=sh

@@ -2,7 +2,7 @@
 
 pkgname=cdb
 pkgver=0.75
-pkgrel=1
+pkgrel=2
 pkgdesc="A fast, reliable, simple package for creating and reading constant databases"
 arch=('i686')
 url="http://cr.yp.to/cdb.html"
@@ -20,10 +20,10 @@ build() {
   # A little patch, borrowed from Gentoo Portage
   sed -i '' -e 's/^extern int errno;$/#include <errno.h>/' error.h
 
-  make || return 1
-  
+  make
+
   # don't use make setup, but move the binaries ourselves
   mkdir -p ${pkgdir}/bin/
-  install -m 755 -t ${pkgdir}/bin/ cdbdump cdbget cdbmake cdbmake-12 cdbmake-sv cdbstats cdbtest || return 1
+  install -m 755 -t ${pkgdir}/bin/ cdbdump cdbget cdbmake cdbmake-12 cdbmake-sv cdbstats cdbtest
 }
 # vim:syntax=sh
