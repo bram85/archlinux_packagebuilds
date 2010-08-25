@@ -3,12 +3,12 @@
 
 pkgname=flickr-on-plasma-plasmoid
 pkgver=0.7.1
-pkgrel=2
+pkgrel=3
 pkgdesc="A Plasma applet showing the most interesting pictures on Flickr."
 arch=('i686' 'x86_64')
 url="http://www.kde-look.org/content/show.php/show.php?content=94800"
 license=('GPL')
-depends=('kdebase-workspace>=4.1.0' 'kdeedu-marble')
+depends=('kdebase-workspace>=4.1.0')
 makedepends=('gcc' 'cmake' 'automoc4')
 install=flickrop.install
 source=("http://www.bramschoenmakers.nl/files/flickrop-$pkgver.tar.bz2")
@@ -17,7 +17,7 @@ md5sums=('b0ced248f59d35cdd8c3c0d913cf4ced')
 build() {
   cd "$srcdir/flickrop-$pkgver"
   mkdir build && cd build
-  cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+  cmake -DWITHOUT_MARBLE=1 -DCMAKE_INSTALL_PREFIX=/usr ..
   make
   make DESTDIR="$pkgdir/" install
 }
