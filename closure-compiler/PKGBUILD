@@ -2,7 +2,7 @@
 
 pkgname=closure-compiler
 pkgver=20100616
-pkgrel=1
+pkgrel=2
 pkgdesc="Performs checking, instrumentation and optimizations on Javascript code."
 arch=('any')
 url="http://code.google.com/closure"
@@ -11,8 +11,9 @@ depends=(java-environment)
 source=(http://closure-compiler.googlecode.com/files/compiler-${pkgver}.tar.gz)
 md5sums=('37420272b658593d7cd76af64d1ee53e')
 
-build() {
+package() {
   cd $srcdir
+
   install -m755 -D compiler.jar $pkgdir/usr/share/java/closure-compiler/closure-compiler.jar
   mkdir $pkgdir/usr/bin
   echo '#!/bin/sh

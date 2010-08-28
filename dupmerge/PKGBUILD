@@ -2,7 +2,7 @@
 
 pkgname=dupmerge
 pkgver=1.73
-pkgrel=1
+pkgrel=2
 pkgdesc="Create hardlinks between duplicate files."
 arch=('i686' 'x86_64')
 url="http://dupmerge.sourceforge.net/"
@@ -14,6 +14,11 @@ md5sums=('0c50ce2877be34ced391ec32b30324a6')
 build() {
   cd $srcdir/${pkgname}_$pkgver
   gcc -o dupmerge dupmerge.c
+}
+
+package() {
+  cd $srcdir/${pkgname}_$pkgver
+
   install -D -m 755 dupmerge $pkgdir/usr/bin/dupmerge
 }
 # vim:syntax=sh

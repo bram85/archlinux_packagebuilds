@@ -2,7 +2,7 @@
 
 pkgname=kdeplasma-addons-applets-daisy
 pkgver=0.0.4.23
-pkgrel=2
+pkgrel=3
 pkgdesc="A simple application launcher for Plasma."
 arch=('i686' 'x86_64')
 url="http://cdlszm.org/"
@@ -21,6 +21,11 @@ build() {
   mkdir build && cd build
   cmake -DCMAKE_INSTALL_PREFIX=/usr ..
   make
+}
+
+package() {
+  cd $srcdir/plasma-applet-daisy-${pkgver}/build
+
   make DESTDIR="$pkgdir/" install
 }
 # vim:syntax=sh

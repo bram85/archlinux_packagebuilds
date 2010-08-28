@@ -2,7 +2,7 @@
 
 pkgname=cdb
 pkgver=0.75
-pkgrel=2
+pkgrel=3
 pkgdesc="A fast, reliable, simple package for creating and reading constant databases"
 arch=('i686' 'x86_64')
 url="http://cr.yp.to/cdb.html"
@@ -21,6 +21,10 @@ build() {
   sed -e 's/^extern int errno;$/#include <errno.h>/' -i error.h
 
   make
+}
+
+package() {
+  cd $srcdir/$pkgname-$pkgver
 
   # don't use make setup, but move the binaries ourselves
   mkdir -p ${pkgdir}/bin/

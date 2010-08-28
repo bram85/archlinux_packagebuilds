@@ -2,7 +2,7 @@
 
 pkgname=plasma-gx-mail-notify-plasmoid
 pkgver=0.4.4
-pkgrel=2
+pkgrel=3
 pkgdesc="Plasmoid for checking unreaded e-mails."
 arch=('i686' 'x86_64')
 url="http://www.kde-look.org/content/show.php?content=99617"
@@ -19,6 +19,11 @@ build() {
   mkdir build && cd build
   cmake -DCMAKE_INSTALL_PREFIX=/usr ..
   make
+}
+
+package() {
+  cd "$srcdir"/gx_mail_notify-$pkgver/build
+
   make DESTDIR="$pkgdir/" install
 }
 # vim:syntax=sh

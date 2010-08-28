@@ -6,7 +6,8 @@ _havedocs=0
 
 pkgname=bup
 pkgver=0.17
-pkgrel=1
+pkgrel=2
+_pkgrev=47d71b9
 pkgdesc="Backup tool using git pack files."
 arch=('i686' 'x86_64')
 url="http://github.com/apenwarr/bup"
@@ -17,9 +18,14 @@ source=("http://github.com/apenwarr/bup/tarball/$pkgname-$pkgver")
 md5sums=('d99f7dcfba03223e9f0c68d55cc5b49d')
 
 build() {
-  cd $srcdir/apenwarr-bup-47d71b9
+  cd $srcdir/apenwarr-$pkgname-$_pkgrev
 
   make
+}
+
+package() {
+  cd $srcdir/apenwarr-$pkgname-$_pkgrev
+
   make DESTDIR=$pkgdir install
 }
 # vim:syntax=sh

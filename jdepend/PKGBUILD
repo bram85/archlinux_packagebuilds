@@ -2,7 +2,7 @@
 
 pkgname=jdepend
 pkgver=2.9
-pkgrel=2
+pkgrel=3
 pkgdesc="Traverses Java class file directories and generates design quality metrics for each Java package."
 arch=('any')
 url="http://clarkware.com/software/JDepend.html"
@@ -11,7 +11,7 @@ depends=('java-runtime')
 source=(http://www.clarkware.com/software/jdepend-2.9.zip)
 md5sums=('4e979c0dda766ba1dd719905ca975c7b')
 
-build() {
+package() {
   cd $srcdir/$pkgname-$pkgver/lib
   install -D -m 644 $pkgname-$pkgver.jar $pkgdir/usr/share/java/$pkgname/$pkgname-$pkgver.jar
 
