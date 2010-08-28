@@ -10,7 +10,7 @@ license=('GPL')
 depends=('bash' 'curl' 'elinks' 'lynx' 'mpg123' 'procps' 'util-linux-ng')
 install=(bashic.install)
 source=("http://bash.gmxhome.de/scripting/$pkgname-$pkgver")
-md5sums=('cf43356c4769761fa1681cd901c4f96b')
+md5sums=('def68ce0784b093a8be53a97233f4857')
 
 package() {
   install -D -m 756 ${srcdir}/$pkgname-$pkgver ${pkgdir}/usr/bin/bashic
