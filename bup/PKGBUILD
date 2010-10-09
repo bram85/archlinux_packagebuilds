@@ -6,8 +6,8 @@ _havedocs=0
 
 pkgname=bup
 pkgver=0.19
-pkgrel=1
-_pkgrev=47d71b9
+pkgrel=2
+_pkgrev=dc07789
 pkgdesc="Backup tool using git pack files."
 arch=('i686' 'x86_64')
 url="http://github.com/apenwarr/bup"
